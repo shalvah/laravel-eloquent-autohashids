@@ -1,5 +1,5 @@
 {
-  "name": "shalvah/eloquent-auto-hashids",
+  "name": "shalvah/eloquent-autohashids",
   "description": "Add unique ids automatically to your Eloquent models",
   "minimum-stability": "stable",
   "license": "MIT",
