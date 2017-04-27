@@ -12,9 +12,11 @@ class AutoHashidsObserver
     {
         $column = property_exists($model, "hashidsColumn") ? $model->hashidsColumn : "uid";
         $connection = property_exists($model, "hashidsConnection") ? $model->hashidsConnection : "main";
-        $encodings = property_exists($model, "hashidsEncodings") ? $model->hashidsEncodings : $model->getKey();
+        $encodings = property_exists($model, "hashidsEncodings") ? $model->hashidsEncodings : [$model->getKey()];
 
-        $model->$column = Hashids::connection($connection)->encode($encodings);
+        $hashConn = Hashids::connection($connection)
+        $model->$column = call_user_func_array([$hashConn, "encode"], $encodings);
+
         $model->save();
     }
 
