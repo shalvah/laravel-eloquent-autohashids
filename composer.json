@@ -15,7 +15,9 @@
     "vinkla/hashids": "^3.1",
     "illuminate/support": "^5.1.0"
   },
-  "psr-4": {
-    "Shalvah\\AutoHashids\\": "src/"
+  "autoload": {
+    "psr-4": {
+      "Shalvah\\AutoHashids\\": "src/"
+    }
   }
 }
