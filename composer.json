@@ -1,7 +1,7 @@
 {
   "name": "shalvah/eloquent-autohashids",
   "description": "Add unique ids automatically to your Eloquent models",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "license": "MIT",
   "authors": [
     {
@@ -11,9 +11,9 @@
   ],
   "require": {
     "php": ">=5.6.4",
+    "illuminate/database": "^5.1.0",
     "vinkla/hashids": "^3.1",
-    "illuminate/support": "5.4.x-dev",
-    "illuminate/database": "5.4.x-dev"
+    "illuminate/database": "5.1.0"
   },
   "psr-4": {
     "Shalvah\\AutoHashids\\": "src/"
