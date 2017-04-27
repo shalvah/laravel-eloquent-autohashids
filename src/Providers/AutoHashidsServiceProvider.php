@@ -2,6 +2,7 @@
 
 namespace Shalvah\AutoHashids\Providers;
 
+use Illuminate\Support\Facades\Config;
 use Shalvah\AutoHashids\Observers\AutoHashidsObserver;
 use Illuminate\Support\ServiceProvider;
 
@@ -14,7 +15,7 @@ class AutoHashidsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $models = \config("hashids.models");
+        $models = Config::get("hashids.models");
         foreach ($models as $model) {
             $model::observe(AutoHashidsObserver::class);
         }
