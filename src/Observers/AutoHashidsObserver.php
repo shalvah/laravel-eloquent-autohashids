@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: J
- * Date: 27/04/2017
- * Time: 10:48
- */
 
 namespace Shalvah\AutoHashids\Observers;
 
