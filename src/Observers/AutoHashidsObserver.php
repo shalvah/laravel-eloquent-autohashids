@@ -14,7 +14,7 @@ class AutoHashidsObserver
         $connection = property_exists($model, "hashidsConnection") ? $model->hashidsConnection : "main";
         $encodings = property_exists($model, "hashidsEncodings") ? $model->hashidsEncodings : [$model->getKey()];
 
-        $hashConn = Hashids::connection($connection)
+        $hashConn = Hashids::connection($connection);
         $model->$column = call_user_func_array([$hashConn, "encode"], $encodings);
 
         $model->save();
