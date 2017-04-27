@@ -17,16 +17,16 @@ class AutoHashidsObserver
         $hashConn = Hashids::connection($connection);
 
         if(is_array($encodings)) {
-            $en = [];
+            $val = [];
             foreach ($encodings as $encoding) {
-                $en[] = $model->$encoding;
+                $val[] = $model->$encoding;
             }
-            $encodings = $en;
+            $params = $val;
         } else {
-            $encodings = $model->$encodings;
+            $params = [$model->$encodings];
         }
 
-        $model->$column = call_user_func_array([$hashConn, "encode"], $encodings);
+        $model->$column = call_user_func_array([$hashConn, "encode"], $params);
 
         $model->save();
     }
